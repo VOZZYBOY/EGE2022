@@ -1,0 +1,16 @@
+f=open('17-10.txt')
+m=list(map(int,f.readlines()))
+k,summa = 0,0
+maxsumma = 0
+for i in range(1,len(m)-1):
+    if (m[i - 1] % 3 == 0 and m[i] % 5 == 0 and m[i + 1] % 7 == 0) or \
+       (m[i - 1] % 3 == 0 and m[i] % 7 == 0 and m[i + 1] % 5 == 0) or \
+       (m[i - 1] % 5 == 0 and m[i] % 3 == 0 and m[i + 1] % 7 == 0) or \
+       (m[i - 1] % 5 == 0 and m[i] % 7 == 0 and m[i + 1] % 3 == 0) or \
+       (m[i - 1] % 7 == 0 and m[i] % 5 == 0 and m[i + 1] % 3 == 0) or \
+       (m[i - 1] % 7 == 0 and m[i] % 3 == 0 and m[i + 1] % 5 == 0):
+        k+=1
+        summa = m[i-1] + m[i] + m[i+1]
+        maxsumma = max(maxsumma,summa)
+print(k,maxsumma)
+                                                                                                                                    
